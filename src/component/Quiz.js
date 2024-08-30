@@ -36,7 +36,7 @@ const Quiz = () => {
     const fetchQuestions = async () => {
         if (!token) return;
         try {
-            const response = await axios.get(`http://localhost:8000/api/quiz?category=${selectedCategory}&token=${token}`);
+            const response = await axios.get(`https://devnext-serverside.onrender.com/api/quiz?category=${selectedCategory}&token=${token}`);
             setQuestions(response.data);
         } catch (error) {
             console.error('Error fetching quiz questions:', error);
@@ -80,7 +80,7 @@ const Quiz = () => {
 
     const handleSubmitScore = async () => {
         try {
-            const response = await axios.post('http://localhost:8000/api/saveScore', {
+            const response = await axios.post('https://devnext-serverside.onrender.com/api/saveScore', {
                 username: name,
                 score: score,
                 feedback: feedback,

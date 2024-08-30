@@ -8,7 +8,7 @@ const ShowData = () => {
 
     const fetchData = async () => {
         try {
-            const response = await axios.get(`http://localhost:8000/api/data?username=${name}`);
+            const response = await axios.get(`https://devnext-serverside.onrender.com/api/data?username=${name}`);
             setData(response.data);
             setError(''); 
         } catch (error) {
